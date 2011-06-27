@@ -5,3 +5,25 @@
  *= require_self
  *= require_tree . 
 */
+#menutop {
+text-align: center;
+font-size: 18px;
+  padding:10px;
+  margin:0;
+  }
+#menutop li {
+list-style: none;
+display: inline;
+padding: 2px 0.5em;
+  }
+
+#menuhappy {
+text-align: center;
+font-size: 3em;
+margin-bottom: 0;
+  }
+#menuhappy li {
+list-style: none;
+display: inline;
+padding: 2px 0.5em;
+  }
