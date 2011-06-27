@@ -8,6 +8,19 @@
 </head>
 <body>
 
+<header>
+
+	<ul id="menutop">
+		<li><%= link_to "Главная", "/" %></li>
+		<li><%= link_to "Кубик", kubik_path %></li>
+		<li><%= link_to "Решения", decision_path %></li>
+		<li><%= link_to "Happy Timer", happydays_path %></li>
+		<li><%= link_to "Дисперсия", capitalcost_path %></li>
+		<li><%= link_to "FV", fvcalc_path %></li>
+	</ul>
+
+</header> 
+
 <%= yield %>
 
 </body>
