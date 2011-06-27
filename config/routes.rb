@@ -1,5 +1,12 @@
 Finapps::Application.routes.draw do
-  get "home/index"
+  match '/fvcalc',  :to => 'fvcalc#fvcalc'
+  match '/fvcalcres',  :to => 'fvcalc#fvcalcres'
+    
+  match '/kubik',  :to => 'simpleapps#kubik'
+  match '/decision',  :to => 'simpleapps#decision'
+  match '/happydays',  :to => 'simpleapps#happydays'
+  match '/capitalcost',  :to => 'simpleapps#capitalcost'
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
