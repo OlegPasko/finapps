@@ -25,5 +25,6 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 group :production do
-gem 'therubyracer-heroku'
+  gem 'therubyracer-heroku'
+  gem 'pg'
 end
