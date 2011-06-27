@@ -4,6 +4,8 @@ Finapps::Application.routes.draw do
 
   match '/fvcalc',  :to => 'fvcalc#fvcalc'
   match '/fvcalcres',  :to => 'fvcalc#fvcalcres'
+  match '/fvcalcs',  :to => 'fvcalc#fvcalcs'
+  match '/fvcalcress',  :to => 'fvcalc#fvcalcress'
     
   match '/kubik',  :to => 'simpleapps#kubik'
   match '/decision',  :to => 'simpleapps#decision'

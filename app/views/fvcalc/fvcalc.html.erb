@@ -2,6 +2,8 @@
 <h2>Считака будущей стоимости</h2>
 <%= form_tag ('/fvcalcres') do %>
 <table width="400">
+<tr><td width="50%"></td>
+<td width="50%"><%= link_to "Версия попроще", fvcalcs_path %></td></tr>
 <tr><td width="50%"><%= label_tag "Текущая стоимость (PV) " %>:</td>
 <td width="50%"><%= number_field_tag :pv, 1000, :min => 0  %></td></tr>
 <tr><td width="50%"><%= label_tag "Количество периодов (n) " %>:</td>

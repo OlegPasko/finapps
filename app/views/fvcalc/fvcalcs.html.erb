@@ -1,0 +1,18 @@
+<div align="center">
+<h2>Считака будущей стоимости</h2>
+<%= form_tag ('/fvcalcress') do %>
+<table width="400">
+<tr><td width="50%"></td>
+<td width="50%"><%= link_to "Версия попродвинутей", fvcalc_path %></td></tr>
+<tr><td width="50%"><%= label_tag "Сколько денег имеем:" %></td>
+<td width="50%"><%= number_field_tag :pv, 1000, :min => 0  %></td></tr>
+<tr><td width="50%"><%= label_tag "На сколько лет вкладываем:" %></td>
+<td width="50%"><%= number_field_tag :n, 5, :min => 1 %></td></tr>
+<tr><td width="50%"><%= label_tag "Как начисляются проценты:" %></td>
+<td width="50%"><%= select_tag :m, raw("<option>Ежемесячно</option><option>Ежеквартально</option><option>Ежегодно</option>") %></td></tr>
+<tr><td width="50%"><%= label_tag "Прецентная ставка (%):" %></td>
+<td width="50%"><%= number_field_tag :per, 10, :min => 0 %></td></tr>
+</table>
+<%= submit_tag 'Тыц!' %>
+<% end %>
+</div>

@@ -1,0 +1,19 @@
+<div align="center">
+<h2>Считака будущей стоимости</h2>
+<table width="400">
+<tr><td width="50%"></td>
+<td width="50%"><%= link_to "Версия попродвинутей", fvcalc_path %></td></tr>
+<tr><td width="50%"><%= label_tag "Сколько денег имеем:" %></td>
+<td width="50%"><%= number_field_tag :pv, @pv, :disabled => true %></td></tr>
+<tr><td width="50%"><%= label_tag "На сколько лет вкладываем:" %></td>
+<td width="50%"><%= number_field_tag :n, @n, :disabled => true %></td></tr>
+<tr><td width="50%"><%= label_tag "Как начисляются проценты:" %></td>
+<td width="50%"><%= select_tag :m, raw("<option>#{@m}</option>"), :disabled => true %></td></tr>
+<tr><td width="50%"><%= label_tag "Прецентная ставка (%):" %></td>
+<td width="50%"><%= number_field_tag :per, @per, :disabled => true %></td></tr>
+</table>
+
+<INPUT TYPE="button" onClick="history.go(-1)" VALUE="Есчо потыцать!">
+
+<p>Будущая стоимость равна: </p><h1><%= @result %></h1>
+</div>
