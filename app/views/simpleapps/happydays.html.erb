@@ -1,0 +1,15 @@
+<div align="center">
+<h2>Счастливая считалка</h2>
+
+	<ul id="menuhappy">
+		<li><%= @days %> дней</li>
+		<li><%= @hours %> ч.</li>
+		<li><%= @minutes %> мин.</li>
+		<li><%= @seconds %> сек.</li>
+	</ul>
+
+<FORM>
+<INPUT TYPE="button" onClick="history.go(0)" VALUE="Обновить!">
+</FORM>
+<br /><p>Или же <%= @hsec %> <%= @secname %></p>
+</div>

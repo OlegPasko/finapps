@@ -1,4 +1,5 @@
 Finapps::Application.routes.draw do
+
   match '/fvcalc',  :to => 'fvcalc#fvcalc'
   match '/fvcalcres',  :to => 'fvcalc#fvcalcres'
     
