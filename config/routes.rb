@@ -1,5 +1,7 @@
 Finapps::Application.routes.draw do
 
+  resources :posts
+
   get "fvcalc/fvcalc"
 
   match '/fvcalc',  :to => 'fvcalc#fvcalc'
@@ -11,7 +13,7 @@ Finapps::Application.routes.draw do
   match '/decision',  :to => 'simpleapps#decision'
   match '/happydays',  :to => 'simpleapps#happydays'
   match '/capitalcost',  :to => 'simpleapps#capitalcost'
-  root :to => 'home#index'
+  root :to => 'posts#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -27,3 +27,28 @@ list-style: none;
 display: inline;
 padding: 2px 0.5em;
   }
+  
+
+/* Posts */
+
+.posts {
+  margin-right: 200px;
+}
+.pinfo {
+  color: #999;
+  font-size: 12px;
+}
+.pcat {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.ptitle {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.pcontent {
+  margin-bottom: 17px;
+}
+.padmin {
+  float:right;
+}
