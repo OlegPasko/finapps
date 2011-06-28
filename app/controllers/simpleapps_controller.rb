@@ -89,7 +89,7 @@ class SimpleappsController < ApplicationController
         sum += i
       end
       dispersia = Math.sqrt(sum)
-      @dispersia = dispersia.to_s
+      @dispersia = dispersia.to_i.to_s
   end
 
 end
