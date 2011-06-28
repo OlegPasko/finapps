@@ -50,11 +50,18 @@ class SimpleappsController < ApplicationController
       @presentprice = presentprice.to_s
       @averageprof = averageprof.to_s
 
-    sravnenie = 100
+    sravnenie = 20
     @sravnenie = sravnenie
+    @sravnenietimes = (1..sravnenie).to_a.join(", ")#для подписи данных, кол-во сравнений по порядку
+    fvtimes = []
+    sravnenie.times do
+      fvtimes.push afv
+    end
+    @fvtimes = fvtimes.join(", ")
     
     devimas = []
-    
+    newvalues = [] #массив с новыми значениями
+    newvaluesdev = []
       sravnenie.times do
         #определяем исход
         ishod = rand(2)
@@ -72,13 +79,16 @@ class SimpleappsController < ApplicationController
         devvv = ((rfv.to_f/presentprice.to_f-1)*100)-averageprof.to_f #определяем квадратическое отклонение
         devvver = devvv.to_f**2 * (1/sravnenie.to_f) #с учетом вероятности, вариация
         devimas.push devvver.to_f
+        newvalues.push rfv.to_i
+        newvaluesdev.push rfv.to_i-afv #deviation
       end
+      @newvalues = newvalues.join(", ")
+      @newvaluesdev = newvaluesdev.join(", ")
       sum = 0 
       devimas.each do |i|
         sum += i
       end
       dispersia = Math.sqrt(sum)
-      @dispersia = dispersia.to_i.to_s
       
   end
 

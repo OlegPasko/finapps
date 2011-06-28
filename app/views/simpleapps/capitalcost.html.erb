@@ -1,7 +1,7 @@
 <div align="center">
 <h2>Эксперемент со стоимостью капитала</h2>
 
-<p>Генерируем стоимость активов = <%= @presentprice %> USD, среднюю доходность <%= @averageprof %>.</p>
+<p>Генерируем базовую стоимость активов = <%= @presentprice %> USD, среднюю доходность <%= @averageprof %>.</p>
 
 <p>Получаем дисперсию <%= @dispersia %> из <%=@sravnenie%> сравнений.</p>
 
@@ -10,60 +10,49 @@
 </FORM>
 
 <script type="text/javascript">
-var chart1; // globally available
+var chart;
 $(document).ready(function() {
-      chart1 = new Highcharts.Chart({
-         chart: {
-            renderTo: 'container',
-            defaultSeriesType: 'line'
-         },
-         title: {
-            text: 'Курс гривны к валютам на неближайшее время будет таким'
-         },
-         xAxis: {
-            categories: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019']
-         },
-         yAxis: {
-            title: {
-               text: 'Курс, грн.'
-            }
-         },
-               tooltip: {
-         enabled: true,
+   chart = new Highcharts.Chart({
+      chart: {
+         renderTo: 'container',
+         defaultSeriesType: 'column'
+      },
+      title: {
+         text: 'График'
+      },
+      xAxis: {
+         categories: [<%= @sravnenietimes %>]
+      },
+      yAxis: {
+   title: {
+            text: 'Стоимость актива, $'
+         }
+      },
+      tooltip: {
          formatter: function() {
-            return '<b>'+ this.series.name +'</b><br/>'+
-               this.x +': '+ this.y +' грн.';
+            return ''+
+                this.series.name +': '+ this.y +'';
          }
       },
-      plotOptions: {
-         line: {
-            dataLabels: {
-               enabled: true
-            },
-            enableMouseTracking: true
-         }
+      credits: {
+         enabled: false
       },
-         
-         legend: {
-         layout: 'vertical',
-         align: 'right',
-         verticalAlign: 'top',
-         x: -10,
-         y: 100,
-         borderWidth: 0
-      },
-         series: [{
-            name: 'USD',
-            data: [<%= rand(10)+5 %>, <%= rand(10)+5 %>, <%= rand(10)+5 %>, <%= rand(10)+5 %>, <%= rand(12)+7 %>, <%= rand(15)+9 %>, <%= rand(18)+11 %>, <%= rand(19)+11 %>]
-         }, {
-            name: 'EUR',
-            data: [<%= rand(15)+1 %>, <%= rand(15)+1 %>, <%= rand(15)+1 %>, <%= rand(15)+1 %>, <%= rand(18)+1 %>, <%= rand(19)+3 %>, <%= rand(19)+5 %>, <%= rand(19)+8 %>]
-          }, {
-            name: 'RUR',
-            data: [<%= rand(4)+1 %>, <%= rand(4)+1 %>, <%= rand(4)+1 %>, <%= rand(4)+1 %>, <%= rand(6)+1 %>, <%= rand(7)+1 %>, <%= rand(7)+2 %>, <%= rand(7)+3 %>]
-         }]
-      });
+      series: [{
+         name: 'Фактическая стоимость актива',
+         data: [<%= @newvalues %>]
+      }, {
+         name: 'Отклонение от ожидаемой стоимости',
+         data: [<%= @newvaluesdev %>]
+      }, {
+           type: 'spline',
+         name: 'Ожидаемая стоимостьь',
+         data: [<%= @fvtimes %>]
+      }      ]
    });
+   
+   
+});
+   
 </script>
 <div id="container" style="width: 100%; height: 400px"></div>
 
