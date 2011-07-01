@@ -51,3 +51,9 @@ padding: 2px 0.5em;
 .padmin {
   float:right;
 }
+
+.sidebar {
+position: absolute;
+right: 0;
+top: 0;	
+}
