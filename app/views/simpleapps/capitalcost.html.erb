@@ -44,7 +44,7 @@ $(document).ready(function() {
          name: 'Отклонение от ожидаемой стоимости',
          data: [<%= @newvaluesdev %>]
       }, {
-           type: 'spline',
+           type: 'scatter',
          name: 'Ожидаемая стоимость',
          data: [<%= @fvtimes %>]
       }      ]
@@ -55,6 +55,7 @@ $(document).ready(function() {
    
 </script>
 <div id="container" style="width: 100%; height: 400px"></div>
+
 
 
 </div>

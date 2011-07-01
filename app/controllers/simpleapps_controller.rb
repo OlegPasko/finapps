@@ -50,7 +50,7 @@ class SimpleappsController < ApplicationController
       @presentprice = presentprice.to_s
       @averageprof = averageprof.to_s
 
-    sravnenie = 20
+    sravnenie = 22
     @sravnenie = sravnenie
     @sravnenietimes = (1..sravnenie).to_a.join(", ")#для подписи данных, кол-во сравнений по порядку
     fvtimes = []
