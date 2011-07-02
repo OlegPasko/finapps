@@ -11,7 +11,8 @@
 	</div> 	
 	
 	<div class="pinfo">
-		<span class="pcat"><%= post.category %></span> → <span class="ptitle"><%= link_to post.title, post %></span>
+		
+		<span class="pcat"><%= Blogcat.find(post.cat_id).category %></span> → <span class="ptitle"><%= link_to post.title, post %></span>
 	</div>
 		
 	<div class="pcontent">
@@ -25,8 +26,7 @@
 
 <br />
 
-<%= link_to 'Добавить новое', new_post_path %>
-
+<%= link_to 'Добавить запись', new_post_path %> | <%= link_to 'Управление категориями', blogcats_path %>
 
 <div class="sidebar">
 

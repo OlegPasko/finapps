@@ -1,0 +1,25 @@
+<h1>Новая категория</h1>
+
+  <% if @cat.errors.any? %>
+    <div class="message warning">
+
+      <ul>
+      <% @cat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= form_for(@cat) do |f| %>
+
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Обратно', blogcats_path %>

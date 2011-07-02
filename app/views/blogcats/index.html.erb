@@ -1,0 +1,15 @@
+<h1>Категории</h1>
+
+<table>
+<tr><td># id</td><td>Название категории</td><td>Действия</td>
+</tr>		
+<% @cats.each do |c| %>
+<tr>
+<td><%=c.id%>.</td> <td><b><%=c.category%></b></td><td> (<%= link_to 'Редактировать', edit_blogcat_path(c) %> | <%= link_to 'x', c, :confirm => 'Точно? А если подумать?', :method => :delete %>)</td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to 'На главную', root_path %> | <%= link_to 'Добавить >>', new_blogcat_path %>
+
+<p id="notice"><%= notice %></p>

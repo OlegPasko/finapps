@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @posts }
@@ -14,7 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
+    @cat = Blogcat.find(@post.cat_id).category
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @post }
@@ -24,6 +23,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
+
     @post = Post.new
 
     respond_to do |format|

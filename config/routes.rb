@@ -1,9 +1,9 @@
 Finapps::Application.routes.draw do
 
   resources :posts
-
+  resources :blogcats
   get "fvcalc/fvcalc"
-
+  # match '/adm/newcat',  :to => 'blogcats#new'
   match '/fvcalc',  :to => 'fvcalc#fvcalc'
   match '/fvcalcres',  :to => 'fvcalc#fvcalcres'
   match '/fvcalcs',  :to => 'fvcalc#fvcalcs'
