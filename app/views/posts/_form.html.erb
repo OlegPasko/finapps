@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+<script type="text/javascript">
+       bkLib.onDomLoaded(function() { nicEditors.allTextAreas({fullPanel : true}) });
+</script>
   <div class="field">
     <%= f.label :cat_id %><br />
     <%= f.number_field :cat_id %>
