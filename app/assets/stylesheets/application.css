@@ -66,6 +66,9 @@ padding: 2px 0.5em;
 
 .posts {
   margin-right: 200px;
+  padding-bottom: 2px;
+  border-bottom: solid 1px #E5E5E5;
+  margin-bottom: 20px;
 }
 .pinfo {
   color: #999;
@@ -75,7 +78,10 @@ padding: 2px 0.5em;
   text-transform: uppercase;
   font-weight: bold;
 }
+.ptime {
+}
 .ptitle {
+  font-size: 18px;
   font-weight: bold;
 }
 .pcontent {

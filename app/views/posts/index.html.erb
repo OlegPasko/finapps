@@ -10,11 +10,15 @@
 	    <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
 	</div> 	
 	
+	<div class="ptitle">
+		<%= link_to post.title, post %>
+	</div>
+	
 	<div class="pinfo">
 		
-		<span class="pcat"><%= Blogcat.find(post.cat_id).category %></span> → <span class="ptitle"><%= link_to post.title, post %></span>
+		<span class="pcat"><%= Blogcat.find(post.cat_id).category %></span> — <span class="ptime"><%=post.created_at.strftime("%m.%d.%Y")%></span>
 	</div>
-		
+
 	<div class="pcontent">
 	    <%= post.content %>
 	</div>
