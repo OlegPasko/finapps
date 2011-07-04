@@ -1,7 +1,15 @@
 Finapps::Application.routes.draw do
-
+  
+   
+  #match '/adm', :to => 'blogcats#index' 
   resources :posts
   resources :blogcats
+  match '/adm',  :to => 'adm#index'
+  #match '/adm/editcat',  :to => 'blogcats#edit'
+  #match '/adm/newcat',  :to => 'blogcats#new'
+  #match '/adm',  :to => 'blogcats#index' 
+
+  
   get "fvcalc/fvcalc"
   # match '/adm/newcat',  :to => 'blogcats#new'
   match '/fvcalc',  :to => 'fvcalc#fvcalc'

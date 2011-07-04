@@ -9,7 +9,7 @@ class BlogcatsController < ApplicationController
 
     respond_to do |format|
       if @cat.save
-        format.html { redirect_to blogcats_path, :notice => 'Category was successfully created.' }
+        format.html { redirect_to adm_path, :notice => 'Category was successfully created.' }
         format.json { render :json => @cat, :status => :created, :location => @cat }
       else
         format.html { render :action => "new" }
@@ -42,7 +42,7 @@ class BlogcatsController < ApplicationController
 
     respond_to do |format|
       if @cat.update_attributes(params[:blogcat])
-        format.html { redirect_to blogcats_path, :notice => 'Category was successfully updated.' }
+        format.html { redirect_to adm_path, :notice => 'Category was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
