@@ -1,22 +1,22 @@
 <h1>Блог</h1>
 
-
-
 <% @posts.each do |post| %>
 <div class="posts">
-	
+
 	<div class="padmin">
+			<% if current_user %>
 	    <%= link_to 'Edit', edit_post_path(post) %>
 	    <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+	    	<% end %>
 	</div> 	
-	
+
 	<div class="ptitle">
 		<%= link_to post.title, post %>
 	</div>
 	
 	<div class="pinfo">
 		
-		<span class="pcat"><%= Blogcat.find(post.cat_id).category %></span> — <span class="ptime"><%=post.created_at.strftime("%m.%d.%Y")%></span>
+		<span class="pcat"><%= Blogcat.find(post.cat_id).category %></span> — <span class="ptime"><%=post.created_at.strftime("%d.%m.%Y")%></span>
 	</div>
 
 	<div class="pcontent">
@@ -29,9 +29,11 @@
 
 
 <br />
-
-<%= link_to 'Добавить запись', new_post_path %> | <%= link_to 'Админко', adm_path %>
-
+<% if current_user %>
+<%= link_to 'Добавить запись', new_post_path %> | <%= link_to 'Админко', adm_path %> | <%= link_to 'Выйти', log_out_path %>
+<% else %>
+<%= link_to 'Войти', login_path %> 
+<% end %>
 <div class="sidebar">
 
 

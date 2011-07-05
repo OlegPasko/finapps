@@ -1,3 +1,4 @@
+<% if current_user %>
 <div class="column span-16">
 <h1>Записи</h1>
 
@@ -34,4 +35,7 @@
 <%= link_to 'На главную', root_path %> | <%= link_to 'Добавить >>', new_blogcat_path %>
 
 </div>
-<p id="notice"><%= notice %></p>
+<% else %>
+Сорри, только для админчегов :)
+<%= link_to 'Войти?', login_path %> 
+<% end %>

@@ -29,39 +29,18 @@ padding: 2px 0.5em;
   }
  
  /* Messages */
+.error_messages {
+	background: #FFF6BF;
+	border-top: 2px solid #FFD324;
+	border-bottom: 2px solid #FFD324;
+	text-align: center;
+	margin: 10px auto;
+	padding: 5px 20px;
+	}
+	.error_messages li {
 
+	}
   
-	.message {
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		-o-border-radius: 5px;
-		border-radius: 5px;
-		font-size: 14px;
-		line-height: 23px;
-		margin: 30px 0 30px 0;
-		padding: 15px 10px 15px 10px;
-		border-width: 1px;
-		border-style: solid;
-	}
-
-	.success {
-		background: #acf168;
-		border-color: #78b73a;
-		color: #609928;
-	}
-	.note {
-		background: #b9dfef;
-		border-color: #8eb7c9;
-		color: #567e90;
-	}
-	
-	.warning {
-		background: #f77e7e;
-		border-color: #b95555;
-		color: #8b4141;
-	}  
-  
-
 /* Posts */
 
 .posts {
