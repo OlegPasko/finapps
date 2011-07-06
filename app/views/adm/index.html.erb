@@ -1,6 +1,6 @@
 <% if current_user %>
 <div class="column span-16">
-<h1>Записи</h1>
+<h2>Posts (<%=Post.count%>)</h2>
 
 <table>
 <tr><td># id</td><td>Название записи</td><td>Действия</td>
@@ -20,7 +20,7 @@
 
 
 <div class="column span-8 last">
-<h1>Категории</h1>
+<h2>Categories (<%=Blogcat.count%>)</h2>
 
 <table>
 <tr><td># id</td><td>Название категории</td><td>Действия</td>
@@ -39,10 +39,9 @@
 Сорри, только для админчегов :)
 <%= link_to 'Войти?', login_path %> 
 <% end %>
-.
-<div style="border-bottom: solid 1px #E5E5E5;"></div>
+
 <div class="column span-16">
-<h1>Users</h1>
+<h2>Users (<%=User.count%>)</h2>
 <table>
 <tr><td># id</td><td>Name</td><td>email</td>
 </tr>		

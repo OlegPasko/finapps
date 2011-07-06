@@ -13,31 +13,6 @@ class SimpleappsController < ApplicationController
 
   def happydays
 
-    happyfrom=Time.mktime(2009, 11, 28, 15, 20) 
-    timenow=Time.new
-    happytimesec=Time.new-happyfrom
-
-  @hsec = happytimesec.to_i.to_s
-  secnamei = happytimesec.to_i.to_s.split(//).last.to_i #define last number
-  if (secnamei == 2 or secnamei == 3 or secnamei == 4) 
-    @secname = "секунды"
-  elsif secnamei == 1
-    @secname = "секунда"
-  else
-    @secname = "секунд"
-  end
-
-        days = happytimesec.to_i / 86400
-        hours = (happytimesec.to_i / 3600) - (days * 24)
-        minutes = (happytimesec.to_i / 60) - (hours * 60) - (days * 1440)
-        seconds = happytimesec.to_i % 60
-        @days = days
-        @hours = hours
-        @minutes = minutes
-        @seconds = seconds
-
-
-  
   
   end
   

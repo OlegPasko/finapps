@@ -40,7 +40,10 @@ padding: 2px 0.5em;
 	.error_messages li {
 
 	}
-  
+	
+#counter {
+font-size: 2em;	
+  	}
 /* Posts */
 
 .posts {
