@@ -7,7 +7,7 @@
 </tr>		
 <% @posts.each do |p| %>
 <tr>
-<td><%=p.id%>.</td> <td><b><%=p.title%></b></td><td> (<%= link_to 'Редактировать', edit_post_path(p) %> | <%= link_to 'x', p, :confirm => 'Точно? А если подумать?', :method => :delete %>)</td>
+<td><%=p.id%>.</td> <td><%= link_to p.title, p %></td><td> (<%= link_to 'Редактировать', edit_post_path(p) %> | <%= link_to 'x', p, :confirm => 'Точно? А если подумать?', :method => :delete %>)</td>
 </tr>
 <% end %>
 </table>
@@ -39,3 +39,21 @@
 Сорри, только для админчегов :)
 <%= link_to 'Войти?', login_path %> 
 <% end %>
+.
+<div style="border-bottom: solid 1px #E5E5E5;"></div>
+<div class="column span-16">
+<h1>Users</h1>
+<table>
+<tr><td># id</td><td>Name</td><td>email</td>
+</tr>		
+<% @users.each do |u| %>
+<tr>
+<td><%=u.id%>.</td> <td><b><%=u.name%></b></td><td> <%=u.email%></td>
+</tr>
+<% end %>
+</table>
+</div>
+<div class="column span-8 last">
+
+
+</div>
