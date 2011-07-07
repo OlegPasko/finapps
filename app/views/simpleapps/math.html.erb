@@ -1,0 +1,58 @@
+<script type="text/javascript">
+var chart;
+$(document).ready(function() {
+   chart = new Highcharts.Chart({
+      chart: {
+         renderTo: 'container',
+         defaultSeriesType: 'spline'
+      },
+         title: {
+            text: ''
+         },
+      xAxis: {
+         categories: [<%=@xmass%>]
+      },
+      yAxis: {
+
+      },
+     tooltip: {
+         formatter: function() {
+                   return '<b>'+ this.series.name +'</b><br/>'+
+               this.x +': '+ this.y;
+         }
+      },
+      plotOptions: {
+         spline: {
+            marker: {
+               radius: 4,
+               lineColor: '#666666',
+               lineWidth: 1
+            }
+         }
+      },
+      series: [{
+         name: 'x^2',
+         marker: {
+           enabled: false,
+         },
+         data: [<%=@ysqrt%>]
+   
+      }, {
+         name: 'six(x)*200+200',
+         marker: {
+           enabled: false,
+         },
+         data: [<%=@ysin%>]
+      }]
+   });
+   
+   
+});
+</script>
+<div align="center">
+<h2>Math examples</h2>
+
+
+<div id="container" style="width: 100%; height: 400px"></div>
+
+</div>

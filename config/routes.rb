@@ -19,7 +19,7 @@ Finapps::Application.routes.draw do
   match '/fvcalcres',  :to => 'fvcalc#fvcalcres'
   match '/fvcalcs',  :to => 'fvcalc#fvcalcs'
   match '/fvcalcress',  :to => 'fvcalc#fvcalcress'
-    
+  match '/math',  :to => 'simpleapps#math'  
   match '/kubik',  :to => 'simpleapps#kubik'
   match '/decision',  :to => 'simpleapps#decision'
   match '/happydays',  :to => 'simpleapps#happydays'

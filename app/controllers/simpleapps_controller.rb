@@ -12,9 +12,14 @@ class SimpleappsController < ApplicationController
   end
 
   def happydays
-
-  
   end
+  
+  def math
+    @xmass = (-20..20).to_a.join(", ")
+    @ysqrt = (-20..20).to_a.map{ |i| i ** 2 }.join(", ")
+    @ysin = (-20..20).to_a.map{ |i| Math.sin(i)*200+200 }.join(", ")
+  end
+  
   
     def capitalcost
 
