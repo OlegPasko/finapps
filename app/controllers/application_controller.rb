@@ -7,9 +7,11 @@ class ApplicationController < ActionController::Base
   end
   
   def admin_user
-    if User.find(session[:user_id]).id == 1
-      @admin_user ||= User.find(session[:user_id]) if session[:user_id]
+    if current_user.nil?
     else
+      if User.find(session[:user_id]).id == 1
+        @admin_user ||= User.find(session[:user_id]) if session[:user_id]
+      end
     end
   end
   
