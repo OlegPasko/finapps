@@ -1,7 +1,8 @@
-<h1>Blog</h1>
-
+<div id="container">
+<div id="content">	
+	<h1>Blog</h1>
 <% @posts.each do |post| %>
-<div class="maincontent">
+
 
 	<div class="padmin">
 			<% if current_user %>
@@ -23,19 +24,14 @@
 	    <%= raw post.content %>
 	</div>
 
+
+
+<% end %>
+</div>
 </div>
 
-<% end %>
-
-
-<br />
-<% if current_user %>
-<%= link_to 'Добавить запись', new_post_path %> | <%= link_to 'Админко', adm_path %> | <%= link_to 'Выйти', log_out_path %>
-<% else %>
-<%= link_to 'Войти', login_path %> 
-<% end %>
-<div class="sidebar">
+<aside id="sideRight">
 <h1>Nav</h1>
 
 <%= link_to 'Simple apps', simpleapps_path %>
-</div>
+</aside>
