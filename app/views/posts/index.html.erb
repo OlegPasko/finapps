@@ -1,7 +1,7 @@
-<h1>Блог</h1>
+<h1>Blog</h1>
 
 <% @posts.each do |post| %>
-<div class="posts">
+<div class="maincontent">
 
 	<div class="padmin">
 			<% if current_user %>
@@ -35,6 +35,7 @@
 <%= link_to 'Войти', login_path %> 
 <% end %>
 <div class="sidebar">
+<h1>Nav</h1>
 
-
+<%= link_to 'Simple apps', simpleapps_path %>
 </div>

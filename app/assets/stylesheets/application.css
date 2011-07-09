@@ -44,9 +44,32 @@ padding: 2px 0.5em;
 #counter {
 font-size: 2em;	
   	}
+  	
+  	.success, .warning, .attention, .information {
+	padding: 10px 10px 10px 33px;
+	margin-bottom: 15px;
+	color: #555555;
+}
+.success {
+	background: #EAF7D9 url('success.png') 10px center no-repeat;
+	border: 1px solid #BBDF8D;
+}
+.warning {
+	background: #FFD1D1 url('warning.png') 10px center no-repeat;
+	border: 1px solid #F8ACAC;
+}
+.attention {
+	background: #FFF5CC url('attention.png') 10px center no-repeat;
+	border: 1px solid #F2DD8C;
+}
+.information {
+	background: #E8F6FF url('information.png') 10px center no-repeat;
+	border: 1px solid #B8E2FB;
+}
+  	
 /* Posts */
 
-.posts {
+.maincontent {
   margin-right: 200px;
   padding-bottom: 2px;
   border-bottom: solid 1px #E5E5E5;
