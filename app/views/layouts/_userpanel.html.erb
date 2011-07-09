@@ -1,5 +1,5 @@
 	<% if current_user %>
-	<b><%= User.find(session[:user_id]).name %></b> (0) | <%= link_to 'Logout', log_out_path %>
+	<a href="/users/<%= User.find(session[:user_id]).id %>"><b><%= User.find(session[:user_id]).name %></b></a> (<%= User.find(session[:user_id]).score %>) | <%= link_to 'Logout', log_out_path %>
 	<% else %>
 	<%= link_to 'Login', login_path %> or <%= link_to 'Register', register_path %> 
 	<% end %>
