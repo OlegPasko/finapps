@@ -11,21 +11,16 @@
 <body>
 <div id="wrapper">
 <header id="header">
-	<p id="notice"><%= notice %></p>
-	
-	<ul id="menutop">
-		<li><%= link_to "Главная", "/" %></li>
-	</ul>
+<%= render 'layouts/header' %>
 </header>
+<section id="userpanel">
+<%= render 'layouts/userpanel' %>	
+</section>	
 <section id="middle">
 <%= yield %>
 </section>
 <footer id="footer">
-	<% if current_user %>
-	<%= link_to 'Добавить запись', new_post_path %> | <%= link_to 'Админко', adm_path %> | <%= link_to 'Выйти', log_out_path %>
-	<% else %>
-	<%= link_to 'Войти', login_path %> 
-	<% end %>
+<%= render 'layouts/footer' %>
 </footer>
 </div>
 </body>

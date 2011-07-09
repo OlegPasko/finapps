@@ -1,0 +1,12 @@
+	<% if current_user %>
+	<b><%= User.find(session[:user_id]).name %></b> (0) | <%= link_to 'Logout', log_out_path %>
+	<% else %>
+	<%= link_to 'Login', login_path %> or <%= link_to 'Register', register_path %> 
+	<% end %>
+	
+	<div>
+	<% if admin_user %>
+	Admin options: <%= link_to 'Add Post', new_post_path %> | <%= link_to 'AdminPanel', adm_path %>
+	<% else %>	
+	<% end %>
+	</div>

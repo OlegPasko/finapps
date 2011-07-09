@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if admin_user %>
 <div class="column span-16">
 <h2>Posts (<%=Post.count%>)</h2>
 
@@ -35,11 +35,6 @@
 <%= link_to 'На главную', root_path %> | <%= link_to 'Добавить >>', new_blogcat_path %>
 
 </div>
-<% else %>
-Сорри, только для админчегов :)
-<%= link_to 'Войти?', login_path %> 
-<% end %>
-
 <div class="column span-16">
 <h2>Users (<%=User.count%>)</h2>
 <table>
@@ -53,6 +48,8 @@
 </table>
 </div>
 <div class="column span-8 last">
-
+<% else %>
+Admin area, sorry.
+<% end %>
 
 </div>

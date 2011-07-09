@@ -28,6 +28,11 @@ padding: 2px 0.5em;
 #header {
 }
 
+#userpanel {
+	background: #EEEEEE;
+	padding: 2px 0.5em;
+	margin-bottom: 5px;
+}
 
 /* Middle
 -----------------------------------------------------------------------------*/

@@ -2,7 +2,7 @@ Finapps::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"
   match '/login',  :to => 'sessions#new'   
   resources :sessions
-  match '/newuser',  :to => 'users#new'   
+  match '/register',  :to => 'users#new'   
   resources :users
   #match '/adm', :to => 'blogcats#index' 
   resources :posts
