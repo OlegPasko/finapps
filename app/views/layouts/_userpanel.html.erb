@@ -1,12 +1,20 @@
 	<% if current_user %>
-	<a href="/users/<%= User.find(session[:user_id]).id %>"><b><%= User.find(session[:user_id]).name %></b></a> (<%= User.find(session[:user_id]).score %>) | <%= link_to 'Logout', log_out_path %>
-	<% else %>
-	<%= link_to 'Login', login_path %> or <%= link_to 'Register', register_path %> 
-	<% end %>
-	
-	<div>
+	<a href="/users/<%= User.find(session[:user_id]).id %>"><b><%= User.find(session[:user_id]).name %></b></a> (<%= User.find(session[:user_id]).score + 10 %>) | <%= link_to 'Выйти', log_out_path %>	
 	<% if admin_user %>
-	Admin options: <%= link_to 'Add Post', new_post_path %> | <%= link_to 'AdminPanel', adm_path %>
-	<% else %>	
+	| <%= link_to 'Админко', adm_path %>
+	<% else %>
 	<% end %>
-	</div>
+
+		<div class="progressbar">
+			<div style="width: <%= User.find(session[:user_id]).score + 10 %>%;"></div>
+			<span>Прогресс: <%= User.find(session[:user_id]).score + 10 %>%</span>
+		</div>
+
+	<% else %>
+	<%= link_to 'Войти', login_path %> or <%= link_to 'Регистрация', register_path %> 
+	<% end %>
+
+
+
+
+

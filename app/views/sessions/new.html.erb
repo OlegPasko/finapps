@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Log in</h1>
+<h1>Войти</h1>
 
 <%= form_tag sessions_path do %>
   <p>
@@ -7,9 +7,9 @@
     <%= text_field_tag :email, params[:email] %>
   </p>
   <p>
-    <%= label_tag :password %><br />
+    <%= label_tag :Пароль %><br />
     <%= password_field_tag :password %>
   </p>
-  <p class="button"><%= submit_tag "Log in" %></p>
+  <p class="button"><%= submit_tag "Войти" %></p>
 <% end %>
 </div>

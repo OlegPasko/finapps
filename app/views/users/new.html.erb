@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Registration</h1>
+<h1>Регистрация</h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -13,7 +13,7 @@
     </div>
   <% end %>
     <p>
-    <%= f.label :username %><br />
+    <%= f.label :Имя_пользователя %><br />
     <%= f.text_field :name %>
   </p>
   <p>
@@ -21,13 +21,13 @@
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :password %><br />
+    <%= f.label :Пароль %><br />
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :Подтверждание_пароля %><br />
     <%= f.password_field :password_confirmation %>
   </p>
-  <p class="button"><%= f.submit %></p>
+  <p class="button"><%= f.submit "Зарегиццо" %></p>
 <% end %>
 </div>
