@@ -1,0 +1,3 @@
+<%Inflation.where("year > ?", 1999).each do |i|%>
+<%=i.year%> # <%=(i.rate.to_f/1000)%> <br />
+<%end%>

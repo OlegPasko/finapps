@@ -22,8 +22,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
-
 group :production do
-  gem 'therubyracer-heroku'
-  gem 'pg'
+  gem 'therubyracer'
 end

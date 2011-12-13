@@ -1,4 +1,5 @@
 Finapps::Application.routes.draw do
+  match '/inflation',  :to => "inflation#index"
   get "log_out" => "sessions#destroy", :as => "log_out"
   match '/login',  :to => 'sessions#new'   
   resources :sessions
